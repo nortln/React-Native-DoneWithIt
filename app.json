@@ -2,13 +2,17 @@
   "expo": {
     "name": "DoneWithIt",
     "slug": "DoneWithIt",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./app/assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "./app/assets/splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -18,16 +22,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.clintonaikhu.first",
+      "buildNumber": "1.0.0"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+      "package": "com.clintonaikhu.donewithit",
+      "versionCode": 1
+    },
+    "description": "A marketplace for selling the stuff you don't need anymore.",
+    "extra": {
+      "bugsnag": {
+        "apiKey": "c4c682fb4167074eee38d18ab4d165ce"
+      },
+      "eas": {
+        "projectId": "a37cef11-2f57-4787-9b22-4ac01d446723"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "@bugsnag/expo/hooks/post-publish.js",
+          "config": {}
+        }
+      ]
     }
   }
 }
